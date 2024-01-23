@@ -8,6 +8,9 @@ mydb = mysql.connector.connect(host = "localhost", user = "goddy", password = "p
 
 mycursor = mydb.cursor()
 
-data = mycursor.execute("SELECT * FROM customer")
+mycursor.execute("SELECT * FROM customer")
 
-print(data)
+data = mycursor.fetchall()
+
+for x in data:
+    print(x)
